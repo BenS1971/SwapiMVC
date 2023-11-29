@@ -15,7 +15,11 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        return View();
+        Random rand = new Random();
+        string [] names = new[] {"Autumn","Alex","Tom","Lurvy","Stupidhead","Tron"};
+
+        String name = names[rand.Next(0, names.Length)];
+        return View(model: name);
     }
 
     public IActionResult Privacy()
