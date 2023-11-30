@@ -1,5 +1,21 @@
+@model ResultsViewModel<PeopleViewModel>
+
 @{
     ViewData["Title"] = "People";
 }
 
-<h1>People Index</h1>
+<h1 class = "text-center">@ViewData["Title"]</h1>
+
+@if(Model.Results?.Count() > 0)
+{
+    <div class="d-flex-row flex-wrap">
+        @foreach(var person in Model.Results)
+        {
+            <div class="item-container">
+                <div class="item">
+                    <h4>@person.Name</h4>
+                </div>
+            </div>
+        }
+    </div>
+}
